@@ -1,5 +1,3 @@
 <?php
 
-echo "it works";
-
-echo 'Current PHP version: ' . phpversion();
+echo 'END '.'Your phone number is '. $_POST['phoneNumber'];
