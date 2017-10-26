@@ -45,7 +45,7 @@ function random()
 
 	$response_body = json_decode($response->getBody()->getContents(), true);
 
-	$reply = 'END ' . $response_body['word'] . " /" . $response_body['pronunciation'][key($response_body['pronunciation'])] . "/\n";
+	$reply = 'CON ' . $response_body['word'] . " /" . $response_body['pronunciation'][key($response_body['pronunciation'])] . "/\n";
 
 	$i = 1;
 	foreach ($response_body['results'] as $result) {
@@ -68,7 +68,7 @@ function definition($word)
 
 	$response_body = json_decode($response->getBody()->getContents(), true);
 
-	$reply = 'END ' . $word . " /" . $response_body['pronunciation'][key($response_body['pronunciation'])] . "/\n";
+	$reply = 'CON ' . $word . " /" . $response_body['pronunciation'][key($response_body['pronunciation'])] . "/\n";
 
 	$i = 1;
 	foreach ($response_body['results'] as $result) {
