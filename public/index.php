@@ -16,14 +16,15 @@ $client 	= new Client([
 	]
 ]);
 
-if (empty($_POST['text'])) {
+
+$input_array 	= explode("*", $_POST['text']);
+$word 			= end($input_array);
+
+if (empty($word)) {
 	echo base();
-} elseif (is_numeric($_POST['text'])) {
+} elseif (is_numeric($word)) {
 	echo random();
 } else {
-	$input_array 	= explode("*", $_POST['text']);
-	$word 			= end($input_array);
-
 	echo definition($word);
 }
 
